@@ -31,6 +31,7 @@ class Game extends Component {
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
+    this.toggleLocked = this.toggleLocked.bind(this);
   }
 
   roll(evt) {
@@ -67,7 +68,7 @@ class Game extends Component {
   render() {
     return (
       <section>
-        <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} />
+        <Dice dice={this.state.dice} locked={this.state.locked} handleToggleLocked={this.toggleLocked} />
         <button
           className="Game-reroll"
           disabled={this.state.locked.every(x => x)}

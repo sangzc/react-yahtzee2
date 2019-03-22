@@ -6,7 +6,7 @@ class Dice extends Component {
   render() {
     return <div className="Dice">
       {this.props.dice.map((d, idx) =>
-        <Die handleClick={this.props.handleClick}
+        <Die handleToggleLocked={this.props.handleToggleLocked}
           val={d}
           locked={this.props.locked[idx]}
           idx={idx}

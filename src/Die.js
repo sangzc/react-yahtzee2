@@ -6,7 +6,7 @@ class Die extends Component {
     return (
       <button
         className={this.props.locked ? "Die Die-locked" : "Die"}
-        onClick={() => this.props.handleClick(this.props.idx)}>
+        onClick={() => this.props.handleToggleLocked(this.props.idx)}>
         {this.props.val}
       </button>
     );

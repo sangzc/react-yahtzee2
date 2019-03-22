@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`keeps die unlocked 1`] = `
+<Die
+  value="1"
+>
+  <button
+    className="Die"
+    onClick={[Function]}
+  />
+</Die>
+`;
+
+exports[`locks die 1`] = `
+<Die
+  locked={true}
+  value="1"
+>
+  <button
+    className="Die Die-locked"
+    onClick={[Function]}
+  />
+</Die>
+`;
