@@ -10,7 +10,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dice: Array.from({ length: NUM_DICE }),
+      dice: Array.from({ length: NUM_DICE }), // [undefined x5]
       locked: Array(NUM_DICE).fill(false),
       rollsLeft: NUM_ROLLS,
       scores: {
@@ -56,10 +56,13 @@ class Game extends Component {
   }
 
   doScore(rulename, ruleFn) {
+    if (this.state.dice.includes(undefined)) return
     // evaluate this ruleFn with the dice and score this rulename
     this.setState(st => ({
       scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
+      // reset rerolls left to original (3)
       rollsLeft: NUM_ROLLS,
+      // reset all dice to not locked
       locked: Array(NUM_DICE).fill(false),
     }));
     this.roll();
@@ -71,7 +74,7 @@ class Game extends Component {
         <Dice dice={this.state.dice} locked={this.state.locked} handleToggleLocked={this.toggleLocked} />
         <button
           className="Game-reroll"
-          disabled={this.state.locked.every(x => x)}
+          disabled={this.state.locked.every(x => x) || this.state.rollsLeft < 1}
           onClick={this.roll}>
           {this.state.rollsLeft} Rerolls Left
         </button>

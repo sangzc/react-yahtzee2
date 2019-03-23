@@ -16,3 +16,17 @@ it("handles locking of dice", () => {
       .simulate("click");
     expect(wrapper.state().locked).toEqual([true, false, false, false, false]);
   });
+
+
+it("prevents rolling past 0 rerolls", () => {
+    const wrapper = mount(<Game />);
+    wrapper.setState({
+        locked: [false, false, false, false, false],
+        rollsLeft: 0
+      });
+    const rerollButton = wrapper
+      .find(".Game-reroll")
+      .first()
+    expect(rerollButton.html()).toContain("disabled");
+  });
+

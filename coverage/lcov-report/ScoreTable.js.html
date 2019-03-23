@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ScoreTable.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> ScoreTable.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+import RuleRow from './RuleRow';
+import './ScoreTable.css';
+import { ones, twos, threes, fours, fives, sixes, threeOfKind, fourOfKind, fullHouse, smallStraight, largeStraight, yahtzee, chance } from './Rules';
+&nbsp;
+&nbsp;
+class ScoreTable extends Component {
+&nbsp;
+  render() {
+    const { scores, doScore } = this.props;
+&nbsp;
+    return (
+      &lt;div className="ScoreTable"&gt;
+        &lt;section className="ScoreTable-section"&gt;
+          &lt;h2&gt;Upper&lt;/h2&gt;
+          &lt;table cellSpacing="0"&gt;
+            &lt;tbody&gt;
+              &lt;RuleRow name="Ones" score={scores.ones} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("ones", ones.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Twos" score={scores.twos} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("twos", twos.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Threes" score={scores.threes} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("threes", threes.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Fours" score={scores.fours} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("fours", fours.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Fives" score={scores.fives} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("fives", fives.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Sixes" score={scores.sixes} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("sixes", sixes.evalRoll)}</span> /&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/section&gt;
+        &lt;section className="ScoreTable-section ScoreTable-section-lower"&gt;
+          &lt;h2&gt;Lower&lt;/h2&gt;
+          &lt;table cellSpacing="0"&gt;
+            &lt;tbody&gt;
+              &lt;RuleRow name="Three of Kind" score={scores.threeOfKind} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("threeOfKind", threeOfKind.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Four of Kind" score={scores.fourOfKind} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("fourOfKind", fourOfKind.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Full House" score={scores.fullHouse} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("fullHouse", fullHouse.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Small Straight" score={scores.smallStraight} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("smallStraight", smallStraight.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Large Straight" score={scores.largeStraight} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("largeStraight", largeStraight.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Yahtzee" score={scores.yahtzee} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("yahtzee", yahtzee.evalRoll)}</span> /&gt;
+              &lt;RuleRow name="Chance" score={scores.chance} doScore={<span class="fstat-no" title="function not covered" >ev</span>t =&gt; <span class="cstat-no" title="statement not covered" >doScore("chance", chance.evalRoll)}</span> /&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/section&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+&nbsp;
+export default ScoreTable;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 22 2019 16:36:16 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
